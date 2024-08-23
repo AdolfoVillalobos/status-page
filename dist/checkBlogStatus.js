@@ -16,8 +16,9 @@ exports.checkBlogStatus = checkBlogStatus;
 const axios_1 = __importDefault(require("axios"));
 function checkBlogStatus() {
     return __awaiter(this, void 0, void 0, function* () {
+        const URL = 'https://adolfovillalobos.github.io/website/';
         try {
-            const response = yield axios_1.default.get('https://your-blog-url.com');
+            const response = yield axios_1.default.get(URL);
             return {
                 status: response.status === 200 ? 'Online' : 'Offline',
                 color: response.status === 200 ? 'green' : 'red',
