@@ -13,7 +13,7 @@ const http_1 = require("http");
 const fs_1 = require("fs");
 const checkBlogStatus_1 = require("./checkBlogStatus");
 const path_1 = require("path");
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const server = (0, http_1.createServer)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (req.url === '/' && req.method === 'GET') {
         const { status, color } = yield (0, checkBlogStatus_1.checkBlogStatus)();

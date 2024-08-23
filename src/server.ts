@@ -3,7 +3,7 @@ import { readFile } from 'fs';
 import { checkBlogStatus } from './checkBlogStatus';
 import { join } from 'path';
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const server = createServer(async (req: IncomingMessage, res: ServerResponse) => {
     if (req.url === '/' && req.method === 'GET') {
